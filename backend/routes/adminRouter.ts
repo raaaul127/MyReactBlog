@@ -10,7 +10,7 @@ var jsonParser = bodyParser.json();
 adminRouter.get("/", async (req: Request, res: Response) => {
   if (!verifyToken(req, res)) {
     res.status(403).json({
-      message: "<b>Trebue sa fi logat pentru a accesa aceasta zona!<b>",
+      message: "<b>Trebuie sa fi logat pentru a accesa aceasta zona!<b>",
     });
     return;
   }

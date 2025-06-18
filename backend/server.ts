@@ -7,6 +7,7 @@ import fileUpload from "express-fileupload";
 import { userRouter } from "./routes/userRouter";
 import { postRouter } from "./routes/postRouter";
 import { adminRouter } from "./routes/adminRouter";
+
 dotenv.config();
 
 const app: Express = express();
@@ -25,6 +26,7 @@ const port = process.env.PORT;
 app.use(cors());
 app.use("/users", userRouter);
 app.use("/posts", postRouter);
+app.use("/categories", postRouter);
 app.use("/admin", adminRouter);
 //app.use("/uploads", express.static(path.join(__dirname+ "/uploads")));
 app.use("/uploads", express.static("dist/uploads"));
