@@ -35,27 +35,6 @@ postRouter.get("/categories", async (req: Request, res: Response) => {
     res.status(200).json({"data": posts});
   });
 });
-//////////////   Categories   ////////////////
-postRouter.get("/categories/:id", async (req: Request, res: Response) => {
-  const categoriesId: number = Number(req.params.id);
-  postModel.findOne(categoriesId, (err: Error, post: Post) => {
-    if (err) {
-      return res.status(500).json({"message": err.message});
-    }
-    res.status(200).json({"data": post});
-  })
-});
-
-postRouter.get("/:id", async (req: Request, res: Response) => {
-  const categoriesId: number = Number(req.params.id);
-  postModel.findOne(categoriesId, (err: Error, categories: Post) => {
-    if (err) {
-      return res.status(500).json({"message": err.message});
-    }
-    res.status(200).json({"data": categories});
-  })
-});
-/////////////// END  //////////////
 
 postRouter.get("/:id", async (req: Request, res: Response) => {
   const postId: number = Number(req.params.id);
